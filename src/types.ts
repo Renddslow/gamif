@@ -28,3 +28,21 @@ type Days =
   | '27';
 type Types = 'morning' | 'evening' | 'psalms';
 export type Ref = `${Days}/${Types}`;
+export type Condition = { args: Ref[] } & (
+  | {
+      type: 'in';
+    }
+  | {
+      type: 'perfect in range' | 'in range';
+      includePsalms?: boolean;
+    }
+  | {
+      type: 'in psalm range';
+    }
+);
+export type Completion = {
+  user: string;
+  read: string;
+  type: 'morning' | 'evening' | 'psalms';
+  day: number;
+};

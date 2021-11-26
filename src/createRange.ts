@@ -1,6 +1,6 @@
 import { Ref } from './types';
 
-const createRange = (start: Ref, end: Ref): Ref[] => {
+const createRange = (start: Ref, end: Ref, includePsalms: boolean = false): Ref[] => {
   const [startDay, startType] = start.split('/');
   const [endDay, endType] = end.split('/');
 

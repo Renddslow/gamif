@@ -7,9 +7,12 @@
 	"license": "MIT",
 	"author": "Matt McElwee <mubatt@wyopub.com>",
 	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"scripts": {
 		"build": "node build.js",
-		"test": "ava"
+		"postbuild": "yarn type",
+		"test": "ava",
+		"type": "tsc --emitDeclarationOnly"
 	},
 	"husky": {
 		"hooks": {
