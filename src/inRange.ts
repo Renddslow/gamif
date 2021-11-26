@@ -4,8 +4,7 @@ import makeRef from './makeRef';
 
 const inRange = (completions: Completion[], condition: Condition) => {
   const [a, b] = condition.args;
-  // @ts-ignore
-  const refs = createRange(a, b, condition?.includePsalms);
+  const refs = createRange(a, b);
 
   for (const ref of refs) {
     const c = completions.find((c) => makeRef(c) === ref);
